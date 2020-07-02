@@ -55,6 +55,7 @@ def run_server(info):
     )
     if config.config.allow_cors:
         CORS(app)
+    print("creating connection with host {} and port {}".format(config.config.host, config.config.port))
     serve(app, host=config.config.host, port=config.config.port)
 
 
