@@ -2,6 +2,7 @@ FROM python:3-alpine
 
 COPY . /tmp/
 
+
 RUN apk --update add --no-cache python3 postgresql-libs && \
     apk add --no-cache --virtual .build-deps python3-dev gcc musl-dev postgresql-dev && \
     ln -s /usr/bin/python3 /usr/bin/python && \
@@ -14,4 +15,4 @@ VOLUME ["/data"]
 
 EXPOSE 5000/tcp
 
-ENTRYPOINT matrix_registration serve --config-path /data/config.yml
+ENTRYPOINT matrix_registration serve --config-path=/data/config.yml
