@@ -7,7 +7,6 @@ RUN apk --update add --no-cache python3 postgresql-libs && \
     ln -s /usr/bin/python3 /usr/bin/python && \
     ln -s /usr/bin/pip3 /usr/bin/pip && \
     pip install waitress && pip install /tmp && \
-    rm -rf /tmp/* && \
     apk --purge del .build-deps
 
 
@@ -15,5 +14,4 @@ VOLUME ["/data"]
 
 EXPOSE 5000/tcp
 
-ENTRYPOINT ["/usr/bin/python", "/usr/bin/matrix_registration", "api", "--config-path=/data/config.yaml"]
-
+ENTRYPOINT matrix-registration serve --config-path /data/config.json
