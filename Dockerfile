@@ -14,4 +14,4 @@ VOLUME ["/data"]
 
 EXPOSE 5000/tcp
 
-ENTRYPOINT matrix-registration serve --config-path /data/config.yml
+ENTRYPOINT matrix_registration serve --config-path /data/config.yml
