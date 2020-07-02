@@ -1,6 +1,7 @@
 FROM python:3-alpine
 
 COPY . /tmp/
+COPY matrix_registration /usr/bin/matrix_registration
 
 RUN apk --update add --no-cache python3 postgresql-libs && \
     apk add --no-cache --virtual .build-deps python3-dev gcc musl-dev postgresql-dev && \
