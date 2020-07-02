@@ -118,7 +118,7 @@ class Config:
         """
         # important keys that need to be changed
         keys = ['server_location', 'server_name', 'shared_secret', 'port']
-        for key in keys:
+        for key in [i for j in keys if j not in dictionary]:
             temp = dictionary[key]
             dictionary[key] = input('enter {}, e.g. {}\n'.format(key, temp))
             if not dictionary[key].strip():
