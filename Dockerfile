@@ -1,7 +1,6 @@
 FROM python:3-alpine
 
 COPY . /tmp/
-COPY matrix_registration /usr/bin/matrix_registration
 
 RUN apk --update add --no-cache python3 postgresql-libs && \
     apk add --no-cache --virtual .build-deps python3-dev gcc musl-dev postgresql-dev && \
@@ -16,5 +15,5 @@ VOLUME ["/data"]
 
 EXPOSE 5000/tcp
 
-ENTRYPOINT ["/usr/bin/python", "/usr/bin/matrix_registration", "--config-path=/data/config.yaml"]
+ENTRYPOINT ["/usr/bin/python", "/usr/bin/matrix_registration", "serve", "--config-path=/data/config.yaml"]
 
