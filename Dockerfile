@@ -15,5 +15,5 @@ VOLUME ["/data"]
 
 EXPOSE 5000/tcp
 
-ENTRYPOINT ["/usr/bin/python", "/usr/bin/matrix_registration", "api", "--config-path=/data/config.yaml"]
+ENTRYPOINT ["/usr/bin/python3", "-m", "matrix-registration" ,"api", "--config-path=/data/config.yaml"]
 
