@@ -124,11 +124,11 @@ class Config:
             if not dictionary[key].strip():
                 dictionary[key] = temp
         # write to config file
-        new_config_path = self.CONFIG_PATH + CONFIG_NAME
-        relative_path = os.path.relpath(self.CONFIG_PATH + CONFIG_NAME)
-        with open(new_config_path, 'w') as stream:
-            yaml.dump(dictionary, stream, default_flow_style=False)
-            print('config file written to "%s"' % relative_path)
+        #new_config_path = self.CONFIG_PATH + CONFIG_NAME
+        #relative_path = os.path.relpath(self.CONFIG_PATH + CONFIG_NAME)
+        #with open(new_config_path, 'w') as stream:
+        #    yaml.dump(dictionary, stream, default_flow_style=False)
+        #    print('config file written to "%s"' % relative_path)
 
 
 config = None
