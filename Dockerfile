@@ -1,7 +1,7 @@
 FROM python:3-alpine
 
 COPY . /tmp/
-
+COPY config.yaml /config.yaml
 
 RUN apk --update add --no-cache python3 postgresql-libs && \
     apk add --no-cache --virtual .build-deps python3-dev gcc musl-dev postgresql-dev && \
