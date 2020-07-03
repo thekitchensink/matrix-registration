@@ -59,6 +59,7 @@ class Config:
                 # provided file not found checking typical installation dirs
                 config_exists = False
                 for path in CONFIG_PATHS:
+                    print("looking at {}".format(path + CONFIG_NAME))
                     if os.path.isfile(path + CONFIG_NAME):
                         self.CONFIG_PATH = path
                         config_exists = True

@@ -13,6 +13,6 @@ RUN apk --update add --no-cache python3 postgresql-libs && \
 
 VOLUME ["/data"]
 
-EXPOSE 5000/tcp
+EXPOSE 5005/tcp
 
 ENTRYPOINT matrix_registration --config-path=config.yaml serve 
