@@ -72,6 +72,6 @@ setuptools.setup(
     },
     test_suite="tests.test_registration",
     data_files=[
-        ("config", ["config.sample.yaml"]),
+        ("config"),
     ]
 )
